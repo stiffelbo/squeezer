@@ -5,28 +5,3 @@ body {
   font-size: 12px;
 }
 
-.navbar {
-  margin-bottom: 30px;
-}
-
-.clickable {
-  cursor: pointer;
-}
-
-.scroll-hide-y{
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;
-}
-
-.scroll-hide-y::-webkit-scrollbar {
-  display: none;
-}
-
-.selectedRow {
-  background-color: rgb(190, 190, 211);
-  border: 2px solid black;
-}
-
-.activedRow {
-  background-color: #fbf4dd
-}
