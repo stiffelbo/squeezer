@@ -42,8 +42,21 @@ const USDTDataGrid = ({data, onItemChange = null, current = null, rwd}) => {
             const row = {              
                 id: `${index}_${item.symbol}`,
                 symbol: item.symbol,
-                lastPrice: +item.lastPrice,
-                change: +item.priceChangePercent,
+                o: +item.o,
+                h: +item.h,
+                l: +item.l,
+                c: item.lastPrice ? +item.lastPrice : +item.c,
+                low31: +item.min31,
+                low81: +item.min81,
+                low200: +item.min200,
+                max31: +item.max31,
+                max81: +item.max81,
+                max200: +item.max200,
+                sma31: +item.sma31,
+                sma81: +item.sma81,
+                sma200: +item.sma200,
+                qVol: +item.qVol,
+                volSma31: +item.volSma31,
             };
             rows.push(row);
         });
@@ -59,22 +72,54 @@ const USDTDataGrid = ({data, onItemChange = null, current = null, rwd}) => {
             renderCell : params => renderTicker(params),
         },
         {
-            field: 'lastPrice',
+            field: 'c',
             headerName: 'Cena',
             width: 120,
             editable: false,
         },
         {
-            field: 'change',
-            headerName: '%Change',
+            field: 'qVol',
+            headerName: 'Volume',
+            width: 120,
+            editable: false,
+        },
+        {
+            field: 'low31',
+            headerName: 'Min 31',
+            width: 120,
+            editable: false,
+        },
+        {
+            field: 'low81',
+            headerName: 'Min 81',
+            width: 120,
+            editable: false,
+        },
+        {
+            field: 'low200',
+            headerName: 'Min 200',
+            width: 120,
+            editable: false,
+        },
+        {
+            field: 'max31',
+            headerName: 'Max 31',
+            width: 120,
+            editable: false,
+        },
+        {
+            field: 'max81',
+            headerName: 'Max 81',
+            width: 120,
+            editable: false,
+        },
+        {
+            field: 'max200',
+            headerName: 'Max 200',
             width: 120,
             editable: false,
         },
     ];
-
-    const handleRowClick = e => {
-        console.log(e)
-    }
 
     const getRowClass = params => {
         return "";
@@ -86,7 +131,6 @@ const USDTDataGrid = ({data, onItemChange = null, current = null, rwd}) => {
                 rows={getRows()}
                 columns={columns}
                 rowHeight={80}
-                onRowClick={handleRowClick}
                 pageSize={100}
                 getRowClassName={getRowClass}
                 sx={{backgroundColor: 'white', fontSize : '12px'}}

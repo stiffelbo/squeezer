@@ -28,4 +28,3 @@ export function getKlines(symbol, interval, limit = 200) {
     return http.get(`${apiUrl}klines?symbol=${symbol}&interval=${interval}&limit=${limit}`);
 }
 
-

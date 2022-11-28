@@ -6,11 +6,12 @@ import thunk from 'redux-thunk';
 
 //aplication flow reducers
 import {rwdReducer} from './rwdRedux';
-
+import { candlesReducer } from './candlestickDataRedux';
 
 // define reducers
 const reducers = {
   rwd : rwdReducer,
+  candles : candlesReducer,
 };
 
 // combine reducers

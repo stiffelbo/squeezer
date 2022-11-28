@@ -13,7 +13,7 @@ import {get24hChange} from './services/binance';
 
 //Components
 import ListUsdtCoins from "./components/entities/listUsdtCoins";
-import USDT from "./components/entities/USDT/usdt";
+import {USDT} from "./components/entities/USDT/usdt";
 class App extends Component {
   state = {
   };
